@@ -1,0 +1,58 @@
+
+
+[mat-fab] {
+    position: relative;
+    right: 2%;
+    top: 35px;
+    z-index: 1;
+}
+
+.chat-container {
+    position: inherit;
+    margin-top: 100px; /*ajout*/
+    width: inherit;
+    height: inherit;
+}
+
+.chat-input { /*input des messages*/
+    padding-top: 20px;
+    width: 100%;
+}
+
+.chat-list {
+    overflow: auto;
+    /*position: fixed;*/
+    top: inherit;
+    left: inherit;
+    right: inherit;
+    bottom: inherit;
+}
+
+.chat-list-item {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: #E8EAF6;
+}
+
+.main-card {
+    height: 100%;
+}
+
+.chat-footer-container {
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    right:25px;
+}
+
+.chat-notification {
+    text-align: center;
+}
+
+.button-globe {
+    float: right;
+    margin-top: 18px;
+}
+
+/*tout supprimer et réadapter petit à petit */

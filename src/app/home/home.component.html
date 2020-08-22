@@ -1,0 +1,14 @@
+<!-- Permettant d'afficher un message de bienvenue simple et une liste d'utilisateurs avec un lien permettant de
+supprimer tout utilisateur. -->
+
+<div class="doc-content">
+  <h1>Bonjour {{currentUser.firstName}} !</h1>
+  <p>Bienvenue sur Queriddle</p>
+  <h3>Utilisateurs enregistrés : </h3>
+  <ul>
+      <li *ngFor="let user of users">
+          {{user.username}} ({{user.firstName}} {{user.lastName}})
+          - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+      </li>
+  </ul>
+</div>

@@ -1,0 +1,146 @@
+ <div class="btn-group mr-3">
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button class="btn btn-outline-danger" ngbDropdownToggle>Select me</button>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <button ngbDropdownItem>3-TC</button>
+        <button ngbDropdownItem>4-TC</button>
+        <button ngbDropdownItem>5-TC</button>
+      </div>
+    </div>
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button class="btn btn-outline-success" ngbDropdownToggle>Or me</button>
+      <div class="dropdown-menu-md-left" ngbDropdownMenu>
+        <button ngbDropdownItem>ARM</button>
+        <button ngbDropdownItem>BLF</button>
+        <button ngbDropdownItem>CSC</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-group mr-3">
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button class="btn btn-outline-danger" ngbDropdownToggle>Test</button>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <button ngbDropdownItem>A</button>
+        <button ngbDropdownItem>B</button>
+        <button ngbDropdownItem>C</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+ <ngb-tabset [destroyOnHide]="false">
+      <ngb-tab title="iframe">
+        <ng-template ngbTabContent>
+          <p class="mt-4"> Vous consultez le sujet
+
+            <button type="button"
+                    class="btn btn-secondary"
+                    placement="bottom"
+                    popoverTitle="Bacon is good"
+                    ngbPopover="A popover in tab 1">
+              Click me
+            </button>
+
+            <iframe src="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" width="100%" height="800px"></iframe>
+
+          </p>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab title="Object">
+        <ng-template ngbTabContent>
+          <p>
+              <!-- autre méthode faisant la même chose -->
+              <object data="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" type="application/pdf" width="100%" height="800">
+              </object>
+
+          </p>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab title="ng2-pdf-viewer">
+        <ng-template ngbTabContent>
+
+          </div>
+
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+
+
+ import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { DashboardComponent } from '../dashboard/dashboard.component'
+
+    const routes: Routes = [
+        {
+            path: '',
+            component: DashboardComponent,
+        },
+    ];
+
+    @NgModule({
+        imports: [
+            RouterModule.forRoot(routes)
+        ],
+        exports: [
+            RouterModule
+        ],
+        declarations: []
+    })
+    export class AppRoutingModule { }
+
+
+ <!-- MENU -->
+<app-menu></app-menu>
+
+
+<!-- CONTENT -->
+<app-content></app-content> <!-- ts et html de content -->
+
+
+ menu html
+
+ <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Accueil</a>
+        <a class="nav-item nav-link" routerLink="/document">Test document</a>
+        <a class="nav-item nav-link" (click)="logout()">Déconnexion</a>
+        <select class="browser-default custom-select">
+          <option selected disabled>Année</option>
+          <option>3-TC</option>
+          <option>4-TC</option>
+          <option>5-TC</option>
+        </select>
+        <select class="browser-default custom-select">
+          <option selected disabled>Matière</option>
+          <option>ARM</option>
+          <option>BLF</option>
+          <option>CSC</option>
+        </select>
+        <select class="browser-default custom-select">
+          <option selected disabled>Sujet</option>
+          <option>Sujet1</option>
+          <option>Sujet2</option>
+          <option>Sujet3</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Go</button>
+    </div>
+</nav>
+
+
+
+
