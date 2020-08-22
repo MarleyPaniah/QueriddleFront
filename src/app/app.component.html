@@ -1,28 +1,20 @@
-<div class="jumbotron">
-  <div class="container">
-    <ngb-alert type="success" [dismissible]="false">
-      Bootstrap is working!
-    </ngb-alert>
+<!-- Le modèle de composant d'application est le modèle de composant racine de l'application. Il contient la barre de
+navigation principale qui s'affiche uniquement pour les utilisateurs authentifiés, une directive router-outlet pour
+afficher le contenu de chaque vue en fonction de l'itinéraire actuel et un composant d'alerte pour l'affichage des
+messages d'alerte de n'importe où dans l'application. -->
 
-    <h1>
-      <i class="fa fa-bath" aria-hidden="true"></i>
-      And so is Font Awesome!
-    </h1>
-  </div>
+
+<!-- nav -->
+<app-menu></app-menu>
+
+
+<!-- main app container -->
+
+<div class="jumbotron" style="background-color: lightblue;">
+    <div class="container">
+                <alert></alert>
+                <router-outlet></router-outlet>
+    </div>
+
 </div>
-
-<div class="container">
-  <p>
-    A progress bar:
-    <ngb-progressbar showValue="true" type="success" [value]="65">
-    </ngb-progressbar>
-  </p>
-</div>
-
-
-
-<!-- CONTENT -->
-
-<app-content></app-content> <!-- ts et html de content -->
-
 

@@ -1,3 +1,22 @@
+/*Le fichier tsconfig.json configure la manière dont le compilateur TypeScript convertit TypeScript en JavaScript afin
+qu'il puisse s'exécuter dans le navigateur.
+ */
+
+/*{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "ES6",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": [
+                "app/*"
+            ]
+        }
+    }
+}*/
+
+
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -21,3 +40,4 @@
     "strictInjectionParameters": true
   }
 }
+

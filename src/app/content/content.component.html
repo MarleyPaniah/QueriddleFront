@@ -1,63 +1,35 @@
 <div class="container">
   <h1>
-    CONTENT COMPONENT
+    DOCMUMENT COMPONENT
   </h1>
 
   <div class="container">
-    <ngb-tabset>
-      <ngb-tab title="iframe">
-        <ng-template ngbTabContent>
-          <p class="mt-4"> Vous consultez le sujet
-
-            <button type="button"
-                    class="btn btn-secondary"
-                    placement="bottom"
-                    popoverTitle="Bacon is good"
-                    ngbPopover="A popover in tab 1">
-              Click me
-            </button>
-
-            <iframe src="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" width="100%" height="800px"></iframe>
-
-          </p>
-        </ng-template>
-      </ngb-tab>
-
-      <ngb-tab title="Object">
-        <ng-template ngbTabContent>
-          <p>
-              <!-- autre méthode faisant la même chose -->
-              <object data="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" type="application/pdf" width="100%" height="800">
-              </object>
-
-          </p>
-        </ng-template>
-      </ngb-tab>
-
-      <ngb-tab title="ng2-pdf-viewer">
-        <ng-template ngbTabContent>
-          <div class="pdf-container">
-            <pdf-viewer [src]="pdfSrc"
-              [render-text]="true"
-              [original-size]="true"
-              [fit-to-page]="true"
-              [show-all]="true"
-              [autoresize]="true"
-              [show-borders]="true"
-          ></pdf-viewer>
-          </div>
-
-        </ng-template>
-      </ngb-tab>
-
-    </ngb-tabset>
 
 
-  <!-- <div class="container">
-
-  </div> -->
-
+  <ul ngbNav #nav="ngbNav" class="nav-tabs" [destroyOnHide]="false">
+    <li ngbNavItem>
+      <a ngbNavLink>iframe</a>
+      <ng-template ngbNavContent>
+        <iframe src="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" width="100%" height="800px"></iframe>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>ng2-pdf-viewer</a>
+      <ng-template ngbNavContent>
+        <div class="pdf-container">
+              <pdf-viewer [src]="pdfSrc"
+                [render-text]="true"
+                [original-size]="false"
+                [fit-to-page]="true"
+                [show-all]="true"
+                [autoresize]="true"
+                [show-borders]="true"
+            ></pdf-viewer>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
 
   </div>
 </div>
-
